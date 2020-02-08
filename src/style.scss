@@ -1,0 +1,221 @@
+$bgcolor: #384e61; // #6a9d51;
+$fgcolor: whitesmoke;
+@import "../node_modules/@csstools/normalize.css/opinionated.css";
+
+@mixin container {
+    margin: 0 auto;
+    width: 95%;
+
+    @media (min-width: 1400px) {
+        max-width: 1200px;
+    }
+
+    @media (min-width: 1024) {
+        max-width: 960px;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $bgcolor;
+    color: $fgcolor;
+}
+
+.header {
+    @include container;
+    text-align: center;
+    padding: 5rem 0;
+
+    @media (max-width: 767px) {
+        padding: 3rem 0;
+    }
+
+    &__title {
+        font-size: 4rem;
+        line-height: 1;
+        margin: 0;
+
+        @media (min-width: 767px) {
+            font-size: 6rem;
+        }
+    }
+
+    &__subtext {
+        font-size: 1.4rem;
+        margin: 1rem 0 0;
+    }
+}
+
+.footer {
+    @include container;
+    margin-bottom: 4rem;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+
+        @media (max-width: 767px) {
+            display: inline-block;
+        }
+    }
+
+    &__item {
+        border-right: 1px solid whitesmoke;
+        padding: 0 0.8rem;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &__link {
+        font-size: 0.8rem;
+        color: #dedede;
+        opacity: 0.7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.stats {
+    @include container;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    &__progress {
+        margin: 0.5rem;
+        padding: 1rem 0;
+        display: flex;
+        width: calc(69% - 1rem);
+
+        @media (min-width: 375px) {
+            width: calc(50% - 1rem);
+        }
+
+        @media (min-width: 767px) {
+            width: calc(25% - 1rem);
+        }
+
+        @media (max-width: 767px) {
+            width: calc(40%);
+            text-align: center;
+        }
+
+        &Dark {
+            margin: 0.5rem;
+            padding: 1rem;
+            display: flex;
+            color: #8b8b8b;
+            background-color: #000;
+
+            @media (min-width: 375px) {
+                width: calc(50% - 3rem);
+            }
+
+            @media (min-width: 780px) {
+                width: calc(25% - 3rem);
+            }
+
+            @media (max-width: 767px) {
+                width: calc(75%);
+                text-align: center;
+            }
+        }
+    }
+
+    &__animation {
+        min-width: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-left: 0.5rem;
+    }
+
+    &__data {
+        margin: 0;
+        line-height: 1.1;
+        font-size: 1.3rem;
+
+        @media (min-width: 767px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__type {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1.1;
+    }
+}
+
+.info {
+    @include container;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin: 4rem auto;
+
+    &__wrapper {
+        width: calc(50% - 1rem);
+        margin: 0.5rem;
+
+        @media (min-width: 767px) {
+            width: calc(25% - 1rem);
+        }
+    }
+
+    &__title {
+        font-size: 1rem;
+        margin: 0;
+
+        @media (min-width: 767px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__text {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin: 0.5rem 0;
+    }
+}
+
+svg {
+    transform: rotate(-90deg);
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
+
+    .prog {
+        will-change: auto;
+        stroke: #ff5311ed;
+        fill: none;
+        stroke-width: 50px;
+    }
+
+    .bg {
+        stroke: #384e61;
+        fill: none;
+        stroke-width: 50px;
+    }
+}
